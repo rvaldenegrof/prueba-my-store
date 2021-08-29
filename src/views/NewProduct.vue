@@ -1,0 +1,72 @@
+<template>
+  <form @submit.prevent="handleFormSubmit" class="form">
+    <tr>
+      <td><label for="">Nombre Producto</label></td>
+      <td><input type="text" v-model="form.name" required /></td>
+    </tr>
+    
+    
+    <br />
+    <tr>
+      <td><label for="">Precio del producto</label></td>
+      <td><input type="number" v-model.number="form.price" required /></td>
+    </tr>
+    
+    
+    <br />
+    <label for="">Categoria</label>
+    <select v-model="form.category" required>
+      <option value="Food">Comida</option>
+      <option value="Pets">Mascotas</option>
+      <option value="Other">Otro</option>
+    </select>
+    <br />
+    <label>Color</label>
+    <input type="color" v-model="form.color" required />
+    <br />
+    <label>Oferta</label>
+    <input type="checkbox" v-model="form.offer" />
+    <label for="" v-if="form.offer" class="ml-2">Descuento</label>
+    <input
+      type="number"
+      min="1"
+      max="100"
+      v-model="form.discount"
+      v-if="form.offer"
+      required
+    />
+    <br />
+    <button type="submit">Guardar</button>
+  </form>
+</template>
+
+<script>
+export default {
+  name: 'NewProduct',
+  data: () => ({
+    form: {
+      name: '',
+      price: null,
+      category: '',
+      offer: false,
+      discount: null,
+      color: ''
+    }
+  }),
+  methods: {
+    async handleFormSubmit() {
+      await this.$store.dispatch('agregarProducto', this.form)
+      this.$router.push('/products')
+    }
+  }
+}
+</script>
+
+<style scoped>
+.form {
+  border: 1px solid black;
+}
+td {
+    border: 1px solid black;
+}
+</style>
