@@ -87,32 +87,17 @@ export default new Vuex.Store({
       const productIndexInShoppingCart = context.state.shoppingCart.findIndex(
         (product) => {
           return product.name === newProduct.name &&
-            product.category === newProduct.category
-            ? product
-            : undefined
+            product.category === newProduct.category ? product : undefined
         }
       )
 
       if (productIndexInShoppingCart >= 0) {
-        context.commit(
-          'ADD_QTY_TO_SHOPPING_CART_ITEM',
-          productIndexInShoppingCart
-        )
+        context.commit('ADD_QTY_TO_SHOPPING_CART_ITEM', productIndexInShoppingCart)
       } else {
-        context.commit(
-          'ADD_PRODUCT_TO_SHOPPING_CART',
-          {
-            ...newProduct,
-            qty: 1
-          },
-          1000
-        )
+        context.commit('ADD_PRODUCT_TO_SHOPPING_CART',{ ...newProduct,qty: 1},1000)
       }
     },
-    async agregarCantidadAlProductoDelCarritoDeCompras(
-      context,
-      indiceProducto
-    ) {
+    async agregarCantidadAlProductoDelCarritoDeCompras(context, indiceProducto) {
       await delay(1000)
       context.commit('ADD_QTY_TO_SHOPPING_CART_ITEM', indiceProducto)
     },

@@ -31,6 +31,7 @@
       v-if="form.offer"
       required
     />
+    
     <br />
     <button type="submit">Guardar</button>
   </form>
