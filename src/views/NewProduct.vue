@@ -1,25 +1,21 @@
 <template>
   <form @submit.prevent="handleFormSubmit" class="form">
-    <tr>
-      <td><label for="">Nombre Producto</label></td>
-      <td><input type="text" v-model="form.name" required /></td>
-    </tr>
-    
+
+      <label for="">Nombre Producto</label>
+      <input type="text" v-model="form.name" required />
     
     <br />
-    <tr>
-      <td><label for="">Precio del producto</label></td>
-      <td><input type="number" v-model.number="form.price" required /></td>
-    </tr>
-    
-    
+      <label for="">Precio del producto</label>
+      <input type="number" v-model.number="form.price" required />
+
     <br />
-    <label for="">Categoria</label>
-    <select v-model="form.category" required>
+      <label for="">Categoria</label>
+      <select v-model="form.category" required>
       <option value="Food">Comida</option>
       <option value="Pets">Mascotas</option>
       <option value="Other">Otro</option>
     </select>
+  
     <br />
     <label>Color</label>
     <input type="color" v-model="form.color" required />
@@ -65,6 +61,7 @@ export default {
 <style scoped>
 .form {
   border: 1px solid black;
+  width: 80%;
 }
 td {
     border: 1px solid black;
