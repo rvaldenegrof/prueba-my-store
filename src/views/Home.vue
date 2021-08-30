@@ -1,12 +1,22 @@
 <template>
   <div class="home">
     Bienvenido
-
     <hr />
-    <p>Busqueda de producto</p>
-    <input type="text" v-model="search" />
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="busqueda">Busqueda de producto</label>
+        <input
+          type="text"
+          class="form-control ml-2"
+          id="busqueda"
+          placeholder="Busquedor que no funciona"
+          v-model="search"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary ml-2">Buscar</button>
+    </form>
     <ul>
-      <li v-for="(producto, $index) in $store.state.search" :key="$index">
+      <li v-for="(producto, $index) in products" :key="$index">
         <label for="" v-text="producto.name"></label>
       </li>
     </ul>
@@ -20,8 +30,7 @@ export default {
   data() {
     return {
       products: [],
-      search: '',
-
+      search: ''
     }
   },
   searchProduct() {

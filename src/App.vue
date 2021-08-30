@@ -1,25 +1,35 @@
 <template>
   <div id="app" class="ml-3 mt-2">
-    <div id="nav">
-      <router-link to="/">Inicio</router-link>
+    <Navbar />
+     <router-view />
+<!--     <div id="nav"> -->
+<!--       <router-link to="/">Inicio</router-link>
       |
       <router-link to="/products">Productos</router-link>
       |
       <router-link to="/newproduct">Nuevo Producto</router-link>
+      |
+      <router-link to="/carrito">Carrito</router-link>
     </div>
     <br />
-    <router-view />
+   
 
-    <hr />
-    <ShoppingCart />
+    <hr /> -->
+<!--     <ShoppingCart /> -->
+
+
   </div>
 </template>
 
 <script>
-import ShoppingCart from './components/ShoppingCart.vue'
+//import ShoppingCart from './components/ShoppingCart.vue'
+import Navbar from './components/Navbar.vue'
 
 export default {
   name: 'App',
-  components: { ShoppingCart }
+  components: { 
+    //ShoppingCart,
+    Navbar
+  }
 }
 </script>

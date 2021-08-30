@@ -1,7 +1,5 @@
 <template>
   <form @submit.prevent="handleFormSubmit" class="form">
-
-
   <div class="form-group col-6">
     <label for="nombreProducto">Nombre Producto</label>
     <input type="text" class="form-control" v-model="form.name" id="nombreProducto" aria-describedby="nombreHelp" placeholder="Nombre del Producto" required>
@@ -16,6 +14,7 @@
   <div class="form-group col-6">
     <label for="categoriaProducto">Categoria</label>
     <select class="form-control" v-model="form.category" id="categoriaProducto" required>
+      <option value="" selected disabled>Seleccione una opción</option>
       <option value="Food">Comida</option>
       <option value="Pets">Mascotas</option>
       <option value="Other">Otro</option>
@@ -43,41 +42,6 @@
     />
   </div>
   <button type="submit" class="btn btn-primary">Guardar</button>
-
-<!-- <hr />
-      <label for="">Nombre Producto</label>
-      <input type="text" v-model="form.name" required />
-    
-    <br />
-      <label for="">Precio del producto</label>
-      <input type="number" v-model.number="form.price" required />
-
-    <br />
-      <label for="">Categoria</label>
-      <select v-model="form.category" required>
-      <option value="Food">Comida</option>
-      <option value="Pets">Mascotas</option>
-      <option value="Other">Otro</option>
-    </select>
-  
-    <br />
-    <label>Color</label>
-    <input type="color" v-model="form.color" required />
-    <br />
-    <label>Oferta</label>
-    <input type="checkbox" v-model="form.offer" />
-    <label for="" v-if="form.offer" class="ml-2">Descuento</label>
-    <input
-      type="number"
-      min="1"
-      max="100"
-      v-model="form.discount"
-      v-if="form.offer"
-      required
-    />
-
-    <br />
-    <button type="submit">Guardar</button> -->
   </form>
 </template>
 
