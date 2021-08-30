@@ -44,6 +44,7 @@ export default new Vuex.Store({
   },
   getters: {
     filteredProductList(state) {
+      console.log(state.search)
       return state.productList.filter(
         (product) =>
           state.search.length > 2 &&
@@ -58,7 +59,11 @@ export default new Vuex.Store({
             producto.qty
         return accumulator
       }, 0)
-    }
+    },
+    searchProduct: state => {
+      console.log(state.search)
+      return state.productList.filter((producto) => producto.name == state.search)
+    },
   },
   mutations: {
     ADD_PRODUCT(state, newProduct) {

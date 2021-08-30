@@ -5,11 +5,13 @@ import store from "./store";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
+import { BootstrapVue } from 'bootstrap-vue';
 
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
+  BootstrapVue,
   render: (h) => h(App),
 }).$mount("#app");

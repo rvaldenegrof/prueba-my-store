@@ -1,6 +1,8 @@
 <template>
   <div id="app" class="ml-3 mt-2">
     <div id="nav">
+      <router-link to="/">Inicio</router-link>
+      |
       <router-link to="/products">Productos</router-link>
       |
       <router-link to="/newproduct">Nuevo Producto</router-link>
